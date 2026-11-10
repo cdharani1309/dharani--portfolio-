@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dharani C — Electronics and Communication Engineering student focused on Embedded Systems and IoT Product Development.">
+<title>Dharani C | ECE Portfolio</title>
+<style>
+:root{
+  --navy:#10243d; --blue:#2563eb; --cyan:#38bdf8; --ink:#172033;
+  --muted:#64748b; --paper:#f5f8fc; --white:#fff; --line:#e3eaf3;
+  --shadow:0 18px 45px rgba(16,36,61,.09); --radius:20px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:850;letter-spacing:.3px;color:var(--navy);font-size:1.15rem}
+.brand span{color:var(--blue)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:.88rem;color:#475569;font-weight:650}
+nav a:hover{color:var(--blue)}
+.menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy)}
+.hero{padding:88px 0 76px;background:radial-gradient(circle at 85% 18%,rgba(56,189,248,.20),transparent 27%),linear-gradient(125deg,#0d2037,#173d68);color:white;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:54px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#b9dcff;font-size:.83rem;font-weight:750;letter-spacing:1.5px;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:#5eead4;box-shadow:0 0 0 5px rgba(94,234,212,.12)}
+h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.04;letter-spacing:-2.5px;margin:20px 0 16px}
+.hero h1 span{color:#7dd3fc}
+.hero p{max-width:660px;color:#d8e7f7;font-size:1.08rem;margin:0 0 28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:11px;font-weight:750;font-size:.92rem;transition:.2s}
+.btn-primary{background:#fff;color:var(--navy)}
+.btn-outline{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:26px;padding:28px;box-shadow:0 24px 55px rgba(0,0,0,.16)}
+.initials{width:94px;height:94px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(135deg,#60a5fa,#22d3ee);color:#09213c;font-size:2rem;font-weight:900;margin-bottom:22px}
+.hero-card h3{margin:0 0 4px;font-size:1.25rem}
+.hero-card .sub{color:#c5d9ef;font-size:.9rem;margin:0 0 18px}
+.quick{display:grid;gap:12px}
+.quick div{display:flex;gap:10px;align-items:center;color:#e5f1ff;font-size:.9rem;overflow-wrap:anywhere}
+.quick b{color:#7dd3fc;min-width:20px}
+section{padding:76px 0}
+.section-head{margin-bottom:30px}
+.kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:1.7px;color:var(--blue);font-weight:850}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.8px;color:var(--navy);margin:5px 0 8px;line-height:1.2}
+.section-head p{color:var(--muted);margin:0;max-width:680px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+.about-text{color:#526176;margin:0}
+.focus-list{display:grid;gap:13px}
+.focus-item{display:flex;gap:12px;align-items:flex-start}
+.icon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;background:#eaf2ff;border-radius:12px;color:var(--blue);font-weight:900}
+.focus-item strong{display:block;color:var(--navy)}
+.focus-item small{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.stat{background:#f0f6ff;border-radius:14px;padding:15px}
+.stat strong{display:block;color:var(--blue);font-size:1.4rem}
+.stat span{font-size:.78rem;color:#64748b}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skill-card h3{margin:0 0 14px;color:var(--navy);font-size:1.05rem}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{padding:7px 11px;border-radius:9px;background:#eef4ff;color:#254a83;font-size:.82rem;font-weight:650}
+.timeline{display:grid;gap:16px}
+.timeline-card{position:relative}
+.topline{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.topline h3{margin:0;color:var(--navy);font-size:1.1rem}
+.meta{color:var(--blue);font-weight:750;font-size:.84rem}
+.org{color:var(--muted);font-size:.9rem;margin:3px 0 12px}
+ul.clean{padding-left:19px;margin:0;color:#536176}
+ul.clean li{margin:6px 0}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project-number{font-size:.76rem;color:var(--blue);font-weight:850;letter-spacing:1px;text-transform:uppercase}
+.project-card h3{color:var(--navy);font-size:1.18rem;margin:7px 0}
+.project-card p{color:#59677b;margin:0 0 15px}
+.project-card .tags{margin-top:16px}
+.education{width:100%;border-collapse:collapse}
+.education th,.education td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.9rem}
+.education th{color:#64748b;font-size:.76rem;text-transform:uppercase;letter-spacing:.7px}
+.education td{color:#334155}
+.education td strong{color:var(--navy)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.list-card h3{color:var(--navy);margin:0 0 13px}
+.item{padding:12px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.item strong{display:block;color:#263b59}
+.item span{font-size:.85rem;color:var(--muted)}
+.contact{background:linear-gradient(125deg,#10243d,#174477);color:white;border-radius:26px;padding:36px}
+.contact h2{color:white}
+.contact p{color:#d1e2f5}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.contact-link{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);overflow-wrap:anywhere}
+.contact-link small{display:block;color:#9ec9f4;font-weight:750;text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
+.contact-link strong{font-size:.92rem}
+footer{text-align:center;padding:28px 0;color:#718096;font-size:.82rem}
+.note{font-size:.8rem;color:#718096;margin-top:14px}
+@media(max-width:800px){
+ .hero-grid,.about-grid,.two-col{grid-template-columns:1fr}
+ .hero{padding:65px 0}
+ .hero-card{max-width:520px}
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px 24px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
+ nav.open{display:flex}
+ .menu{display:block}
+ .skills-grid,.project-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .container{width:min(100% - 28px,1120px)}
+ section{padding:56px 0}
+ .stats{grid-template-columns:1fr}
+ .contact-grid{grid-template-columns:1fr}
+ .education{display:block;overflow-x:auto;white-space:nowrap}
+ .card{padding:20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">DHARANI<span>.</span></a>
+    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#education">Education</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="dot"></span> ECE Student · Embedded Systems · IoT</div>
+   <h1>Hi, I'm<br><span>Dharani C.</span></h1>
+   <p>B.E. Electronics and Communication Engineering student interested in Embedded Systems and IoT Product Development. I enjoy applying technical knowledge to practical projects and continuously developing my engineering skills.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="#projects">Explore my projects ↗</a>
+    <a class="btn btn-outline" href="#contact">Get in touch</a>
+   </div>
+  </div>
+  <aside class="hero-card">
+   <div class="initials">DC</div>
+   <h3>Dharani C</h3>
+   <p class="sub">B.E. Electronics and Communication Engineering</p>
+   <div class="quick">
+    <div><b>⌖</b> Hosur, Tamil Nadu</div>
+    <div><b>✉</b> cd3745962@gmail.com</div>
+    <div><b>☎</b> +91 63745 56557</div>
+    <div><b>↗</b> <a href="https://linkedin.com/in/dharani-c-583440296" target="_blank" rel="noopener">LinkedIn profile</a></div>
+   </div>
+  </aside>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Introduction</div><h2>About Me</h2><p>A quick overview of my academic background and engineering interests.</p></div>
+  <div class="about-grid">
+   <div class="card">
+    <p class="about-text">I am an Electronics and Communication Engineering student at Er. Perumal Manimegalai College of Engineering, Hosur. My career objective is to work in a reputed organization where I can apply my technical skills, problem-solving abilities, and continuous-learning attitude to contribute to organizational growth, particularly in Embedded Systems and IoT Product Development.</p>
+    <div class="stats">
+     <div class="stat"><strong>8.21</strong><span>B.E. CGPA</span></div>
+     <div class="stat"><strong>2027</strong><span>Expected graduation</span></div>
+     <div class="stat"><strong>2</strong><span>Academic projects</span></div>
+    </div>
+   </div>
+   <div class="card focus-list">
+    <div class="focus-item"><div class="icon">⌘</div><div><strong>Embedded Systems</strong><small>Microcontrollers, sensor integration and circuit design</small></div></div>
+    <div class="focus-item"><div class="icon">◎</div><div><strong>Internet of Things</strong><small>IoT cloud platforms and Blynk Cloud</small></div></div>
+    <div class="focus-item"><div class="icon">▦</div><div><strong>Digital Design</strong><small>Verilog and RTL design fundamentals</small></div></div>
+    <div class="focus-item"><div class="icon">↗</div><div><strong>Continuous Learning</strong><small>Technical learning, teamwork and problem solving</small></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills" style="background:#edf3fa">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Capabilities</div><h2>Technical Skills</h2><p>Tools and technologies listed in my resume.</p></div>
+  <div class="skills-grid">
+   <div class="card skill-card"><h3>Programming Languages</h3><div class="tags"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Embedded C</span><span class="tag">Verilog</span><span class="tag">Python</span></div></div>
+   <div class="card skill-card"><h3>Embedded & Hardware</h3><div class="tags"><span class="tag">ESP32</span><span class="tag">I²C</span><span class="tag">SPI</span><span class="tag">Wi-Fi</span><span class="tag">Sensor Integration</span><span class="tag">PCB Design</span><span class="tag">Circuit Design</span></div></div>
+   <div class="card skill-card"><h3>IoT & Tools</h3><div class="tags"><span class="tag">IoT Cloud Platforms</span><span class="tag">Blynk Cloud</span></div></div>
+   <div class="card skill-card"><h3>Project & Other Skills</h3><div class="tags"><span class="tag">End-to-End Project Ownership</span><span class="tag">Cross-functional Coordination</span><span class="tag">Requirement Analysis</span><span class="tag">Documentation</span><span class="tag">Problem Solving</span><span class="tag">Data Analytics</span><span class="tag">Data Visualization</span><span class="tag">AI Concepts</span></div></div>
+  </div>
+  <p class="note">Soft skills: Communication · Time Management · Critical Thinking · Leadership · Teamwork</p>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head"><div class="kicker">What I've built</div><h2>Academic Projects</h2><p>Project work focused on practical applications of electronics, automation and image processing.</p></div>
+  <div class="project-grid">
+   <article class="card project-card">
+    <div class="project-number">Project 01 · 2026</div>
+    <h3>Smart Irrigation – Effective Utilization of Water</h3>
+    <p>Developed a smart irrigation system using Arduino Uno to automate watering based on soil moisture levels. Integrated a soil moisture sensor, water pump and relay module to reduce water wastage and improve irrigation efficiency.</p>
+    <div class="tags"><span class="tag">Arduino Uno</span><span class="tag">Soil Moisture Sensor</span><span class="tag">Relay Module</span></div>
+   </article>
+   <article class="card project-card">
+    <div class="project-number">Project 02 · 2025</div>
+    <h3>Image-Based Fire Detection</h3>
+    <p>Designed a fire detection system using image processing techniques. The system uses a camera for real-time fire detection and generates alerts to support safety and early response.</p>
+    <div class="tags"><span class="tag">Raspberry Pi</span><span class="tag">Camera Module</span><span class="tag">Image Processing</span></div>
+    <p class="note">Resume title specifies “using Arduino Uno”, while its project description and technology list specify Raspberry Pi. Confirm the correct hardware platform before publishing this portfolio.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="education" style="background:#edf3fa">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Academic background</div><h2>Education</h2></div>
+  <div class="card">
+   <table class="education">
+    <thead><tr><th>Qualification</th><th>Institution</th><th>Board / University</th><th>Year</th><th>Result</th></tr></thead>
+    <tbody>
+     <tr><td><strong>B.E. – ECE</strong></td><td>Er. Perumal Manimegalai College of Engineering, Hosur</td><td>Anna University</td><td>2027</td><td>8.21 CGPA</td></tr>
+     <tr><td><strong>HSC (XII)</strong></td><td>Govt. Higher Secondary School, Mathigiri</td><td>State Board (TN)</td><td>2023</td><td>68.11%</td></tr>
+     <tr><td><strong>SSLC (X)</strong></td><td>Sri Sathya Sai Bala Gurukulam Matric Hr. Sec. School</td><td>Matriculation Board (TN)</td><td>2021</td><td>Pass</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section id="experience">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Industry exposure</div><h2>Internship & Industrial Training</h2><p>Practical exposure to manufacturing processes, shop-floor operations and industrial workflows.</p></div>
+  <div class="timeline">
+   <article class="card">
+    <div class="topline"><h3>Industrial Trainee</h3><span class="meta">June 2026 – July 2026</span></div>
+    <div class="org">Ashok Leyland · Unit II, Hosur</div>
+    <ul class="clean"><li>Underwent industrial training focused on familiarization with manufacturing processes and operations.</li><li>Observed shop-floor operations and quality processes.</li><li>Gained practical exposure to industrial manufacturing and production workflows.</li></ul>
+   </article>
+   <article class="card">
+    <div class="topline"><h3>In-Plant Trainee</h3><span class="meta">1 Week</span></div>
+    <div class="org">TVS Company</div>
+    <ul class="clean"><li>Completed one-week in-plant training to gain exposure to industrial operations.</li><li>Observed manufacturing processes and shop-floor practices.</li><li>Strengthened practical understanding of industry workflows and operations.</li></ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="achievements" style="background:#edf3fa">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Learning & recognition</div><h2>Certifications & Achievements</h2></div>
+  <div class="two-col">
+   <div class="card list-card">
+    <h3>Certifications</h3>
+    <div class="item"><strong>Data Analytics with Generative AI</strong><span>Simplilearn SkillUp · 2026</span></div>
+    <div class="item"><strong>RTL to Silicon: ASIC Design Flow and RTL Design Using Verilog</strong><span>Maven Silicon · March 2026</span></div>
+    <div class="item"><strong>Python</strong><span>Course · 2023</span></div>
+   </div>
+   <div class="card list-card">
+    <h3>Achievements & Paper Presentations</h3>
+    <div class="item"><strong>Second Prize – Paper Presentation</strong><span>ECE Department · TEKWARZZ-2026, PSV College</span></div>
+    <div class="item"><strong>Paper Presentation – Smart Irrigation System</strong><span>GEC Bargur · 2026</span></div>
+    <div class="item"><strong>Paper Presentation – IoT and Smart Agriculture Technology</strong><span>NCEECT, Kuppam College of Engineering · 2026</span></div>
+    <div class="item"><strong>Paper Presentation – Mobile App Based Control System</strong><span>Sairam College of Engineering · 2025</span></div>
+    <div class="item"><strong>Paper Presentation – Role of Artificial Intelligence to the Society</strong><span>Eureka 2K24, PMC Tech · 2024</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact">
+   <div class="kicker" style="color:#7dd3fc">Let's connect</div>
+   <h2>Contact Me</h2>
+   <p>I'm interested in opportunities to learn, contribute and grow in Embedded Systems and IoT Product Development.</p>
+   <div class="contact-grid">
+    <a class="contact-link" href="mailto:cd3745962@gmail.com"><small>Email</small><strong>cd3745962@gmail.com</strong></a>
+    <a class="contact-link" href="tel:+916374556557"><small>Phone</small><strong>+91 63745 56557</strong></a>
+    <a class="contact-link" href="https://linkedin.com/in/dharani-c-583440296" target="_blank" rel="noopener"><small>LinkedIn</small><strong>View LinkedIn profile ↗</strong></a>
+    <div class="contact-link"><small>Location</small><strong>Hosur, Tamil Nadu, India</strong></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+<footer>© 2026 Dharani C · ECE Student Portfolio</footer>
+<script>
+document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
